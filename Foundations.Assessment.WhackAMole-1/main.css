@@ -1,0 +1,109 @@
+/*this applies to everything*/
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: 80vw;
+    margin: 0 auto;
+    background-image: url('../dirt.jpg');
+}
+
+/*for the button and score*/
+#scoreSpot{
+    color: honeydew;
+    font-weight: 50%;
+    font-size: 40px;
+    font-family: fantasy;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+#score{
+    text-decoration: underline;
+}
+
+.number{
+    color: hotpink;
+}
+
+.press {
+    font-size: 19px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    background-color: darkkhaki;
+    border-color: rgb(172, 169, 132);
+    color: azure;
+    padding: 1.4em;
+    cursor: grab;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    border-radius: 5px;
+    border: 1px solid;
+    margin-top: 7px;
+    min-width: 80px;
+}
+
+.press:hover{
+    background-color: darkseagreen;
+    color: gold;
+    border-color: rgb(197, 221, 241);
+}
+
+/*the main part of the game itself, ground area*/
+#play{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: darkolivegreen;
+    margin-bottom: .5em;
+}
+
+.hole{
+    display: inline-flex;
+    flex: 1 1 30%;
+    background-color: darkolivegreen;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    cursor: grab;
+}
+  
+.together {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+}
+
+/*the dirt as well as the mole*/
+.dirt, .mole{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: 0;
+}
+.dirt {
+    background-image: url("./images/hole.png");
+    z-index: 1;
+    background-position: center 100%;
+    display: inline-table;
+  }
+  
+.mole {
+    background-image: url(./images/mole.png);
+    transition: all 0.1s ease;
+    top: 100%;
+    background-position: bottom;
+    background-size: 80%;
+  }
+
+.hole.active .mole{
+    top: 0;
+  }
